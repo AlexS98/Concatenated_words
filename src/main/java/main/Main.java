@@ -10,14 +10,14 @@ public class Main {
     private static double secondsTime = 0.0, megaBytesMemory = 0.0;
 
     public static void main(String[] args) {
-        System.out.println(takeMetrics());
+        System.out.println(takeMetrics("words.txt"));
     }
 
-    public static String takeMetrics(){
+    public static String takeMetrics(String path){
         startMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         startTime = System.nanoTime();
         PrefixTree myTrie = new PrefixTree();
-        LinkedList<String[]> list = myTrie.build("words.txt");
+        LinkedList<String[]> list = myTrie.build(path);
         String result = myTrie.findWords(list);
         endTime = System.nanoTime();
         nanoTime = endTime - startTime;
