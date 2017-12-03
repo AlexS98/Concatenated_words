@@ -4,12 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class PrefixTreeNodeTest {
-    PrefixTreeNode node;
-    PrefixTreeNode newNode;
     @Test
     public void nodeTest() throws Exception {
-        node = new PrefixTreeNode();
-        newNode = new PrefixTreeNode();
+        PrefixTreeNode node = new PrefixTreeNode();
+        PrefixTreeNode newNode = new PrefixTreeNode();
         node.addChild('a');
         newNode.addChild('a');
         Assert.assertNotEquals(node.getChild('a'), newNode.getChild('a'));
